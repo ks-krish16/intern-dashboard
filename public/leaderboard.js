@@ -2,7 +2,7 @@
 
 
     try {
-        const response = await fetch(`http://localhost:8080/api/leaderboard` );
+        const response = await fetch(`https://intern-dashboard-f4yw.onrender.com/api/leaderboard` );
         const posts = await response.json();
        
 
