@@ -10,6 +10,12 @@ app.use(cors());
 
 const port=8080;
 
+const cors = require("cors");
+
+app.use(cors({
+  origin: ["https://intern-dashboard-f4yw.onrender.com"],
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.static(path.join(__dirname, "public")));
