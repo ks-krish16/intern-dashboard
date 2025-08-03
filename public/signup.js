@@ -11,7 +11,7 @@ async function signup() {
     const password = document.getElementById('password').value;
     
     try {
-        const response = await fetch('http://localhost:8080/signup', {
+        const response = await fetch('https://intern-dashboard-f4yw.onrender.com/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password })
