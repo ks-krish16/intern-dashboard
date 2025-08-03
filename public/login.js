@@ -8,7 +8,7 @@
         const password1 = document.getElementById('password1').value;
         
         try{
-            const response= await fetch('http://localhost:8080/login', {
+            const response= await fetch('https://intern-dashboard-f4yw.onrender.com/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({username:username1, email:email1, password:password1 })
@@ -26,7 +26,7 @@
         
         }} catch(error) {
     console.log("Error:", error);
-    alert("An error occurred: " + error.message); // More helpful alert
+    alert("An error occurred: " + error.message); 
 }
 
     
