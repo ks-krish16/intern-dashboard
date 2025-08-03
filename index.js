@@ -1,16 +1,14 @@
 const express= require("express");
 const app= express();
 const path=require("path");
-
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const supabase = require("./supabaseClient");
 require("dotenv").config();
-const cors = require("cors");
-app.use(cors());
 
 const port=8080;
 
-const cors = require("cors");
+
 
 app.use(cors({
   origin: ["https://intern-dashboard-f4yw.onrender.com"],
