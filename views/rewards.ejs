@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="rewards.css">
+</head>
+<body>
+        <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>DonateFlow</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/leaderboard" class="nav-link">Leaderboard</a>
+                <a href="/rewards" class="nav-link active">Rewards</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" id="profile" onclick="logout()">Profile</button>
+                <a href="/signup"><button class="btn-primary" id="signup-button">Sign Up</button></a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Rewards -->
+    <main class="rewards">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="rewards-header">
+                <h1>Rewards & Achievements</h1>
+                <p>Unlock exclusive rewards as you reach new fundraising milestones</p>
+                <p class="rewards-tagline">Higher donation levels unlock premium rewards and exclusive benefits</p>
+            </header>
+
+            <!-- Rewards Grid -->
+            <section class="rewards-grid">
+                <!-- First Donation Reward -->
+                <div class="reward-card" id="reward-1">
+                    <div class="reward-header">
+                        <div class="reward-icon">🚀</div>
+                        <div class="reward-title">First Donation</div>
+                    </div>
+                    <div class="reward-trigger">
+                        <div class="trigger-label">Trigger Condition</div>
+                        <div class="trigger-condition">Intern raises their <span class="trigger-highlight">1st</span> donation</div>
+                    </div>
+                    <div class="reward-description">
+                        <span class="reward-quote">"You're off the mark! Welcome to the journey!"</span>
+                        <br><br>
+                        Start your fundraising adventure with your very first donation. Every great journey begins with a single step!
+                    </div>
+                </div>
+
+                <!-- Consistent Five Reward -->
+                <div class="reward-card" id="reward-2">
+                    <div class="reward-header">
+                        <div class="reward-icon">🔄</div>
+                        <div class="reward-title">Consistent Five</div>
+                    </div>
+                    <div class="reward-trigger">
+                        <div class="trigger-label">Trigger Condition</div>
+                        <div class="trigger-condition">Intern completes <span class="trigger-highlight">5</span> donations</div>
+                    </div>
+                    <div class="reward-description">
+                        <span class="reward-quote">"Your efforts are building up!"</span>
+                        <br><br>
+                        Show your commitment and consistency by reaching the 5-donation milestone. You're building momentum!
+                    </div>
+                </div>
+
+                <!-- Top Leader Reward -->
+                <div class="reward-card" id="reward-3">
+                    <div class="reward-header">
+                        <div class="reward-icon">👑</div>
+                        <div class="reward-title">Top Leader</div>
+                    </div>
+                    <div class="reward-trigger">
+                        <div class="trigger-label">Trigger Condition</div>
+                        <div class="trigger-condition">Intern ranks <span class="trigger-highlight">1st</span> on leaderboard</div>
+                    </div>
+                    <div class="reward-description">
+                        <span class="reward-quote">"You're leading the pack!"</span>
+                        <br><br>
+                        Claim the top spot and earn exclusive badge recognition. Leadership comes with special privileges and highlights!
+                    </div>
+                </div>
+
+                <!-- Tenacious Ten Reward -->
+                <div class="reward-card" id="reward-4">
+                    <div class="reward-header">
+                        <div class="reward-icon">💪</div>
+                        <div class="reward-title">Tenacious Ten</div>
+                    </div>
+                    <div class="reward-trigger">
+                        <div class="trigger-label">Trigger Condition</div>
+                        <div class="trigger-condition">Intern completes <span class="trigger-highlight">10</span> donations</div>
+                    </div>
+                    <div class="reward-description">
+                        <span class="reward-quote">"Double digits! You're making a difference."</span>
+                        <br><br>
+                        Reach the prestigious double-digit milestone. Your persistence and dedication are truly making an impact!
+                    </div>
+                </div>
+
+                <!-- Donation Pro Reward -->
+                <div class="reward-card" id="reward-5">
+                    <div class="reward-header">
+                        <div class="reward-icon">🧱</div>
+                        <div class="reward-title">Donation Pro</div>
+                    </div>
+                    <div class="reward-trigger">
+                        <div class="trigger-label">Trigger Condition</div>
+                        <div class="trigger-condition">Intern completes <span class="trigger-highlight">20</span> donations</div>
+                    </div>
+                    <div class="reward-description">
+                        <span class="reward-quote">"You're becoming a donation powerhouse!"</span>
+                        <br><br>
+                        Master level achievement! You've proven yourself as a true fundraising professional with exceptional results.
+                    </div>
+                </div>
+
+                <!-- Top 3 Ranker Reward -->
+                <div class="reward-card premium" id="reward-6">
+                    <div class="reward-header">
+                        <div class="reward-icon">🥇</div>
+                        <div class="reward-title">Top 3 Ranker</div>
+                    </div>
+                    <div class="reward-trigger">
+                        <div class="trigger-label">Trigger Condition</div>
+                        <div class="trigger-condition">Intern is <span class="trigger-highlight">in top 3</span> on leaderboard</div>
+                    </div>
+                    <div class="reward-description">
+                        <span class="reward-quote">"You're among the best!"</span>
+                        <br><br>
+                        Join the elite circle of top performers and earn a golden glow on your avatar. Excellence recognized!
+                    </div>
+                </div>
+            </section>
+</body>
+<script src="rewards.js"></script>
+</html>

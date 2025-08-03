@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="leaderboard.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Intern dashboard</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/leaderboard" class="nav-link active">Leaderboard</a>
+                <a href="/rewards" class="nav-link">Rewards</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" id="profile" onclick="logout()">Profile</button>
+                <a href="/signup"><button class="btn-primary" id="signup-button">Sign Up</button></a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="container">
+            <header class="leaderboard-header">
+                <h1>Donations Leaderboard</h1>
+                <p>See how you rank against other top interns</p>
+            </header>
+
+            <section class="leaderboard">
+                <div class="table-header">
+                    
+                </div>
+              
+            </section>
+        </div>
+    </main>
+</body>
+<script src="leaderboard.js"></script>
+</html>

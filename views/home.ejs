@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonateFlow - Intern Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Intern dashboard</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="/?username=${username}" class="nav-link">Dashboard</a>
+                <a href="/leaderboard" class="nav-link">Leaderboard</a>
+                <a href="/rewards" class="nav-link">Rewards</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" id="profile" onclick="logout()">Profile</button>
+                <a href="/signup"><button class="btn-primary" id="signup-button">Sign Up</button></a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="dashboard-header">
+                     
+                <h1 id="welcome" >Welcome back,  <% if(intern){ %>
+                        <h1>  <%= intern.username %></h1>
+                        <% }else{ %>
+                         <p>No intern details found.</p>
+                        <% } %>   </h1>
+                <p>Track your fundraising progress and unlock exciting rewards.</p>
+            </header>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid">
+                <!-- Intern Profile Card -->
+                <div class="card profile-card">
+                    <div class="card-header">
+                        <h3>Your Profile</h3>
+                        
+                    </div>
+                    <div class="card-content">
+                        
+                        <% if(intern){ %>
+                        <p>  <%= intern.username %></p>
+                        <% }else{ %>
+                         <p>No intern details found.</p>
+                        <% } %>   
+                    </div>
+                </div>
+
+                <!-- Referral Code Card -->
+                <div class="card referral-card">
+                    <div class="card-header">
+                        <h3>Referral Code</h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="m5 15-4-4 4-4"></path>
+                            <path d="m11 11 4 4-4 4"></path>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <p class="label">Your unique code</p>
+                        <div class="code-container">
+                                <span class="code" id="ref_code"> <% if(intern){ %>
+                                    <p > <%= intern.ref_code %></p>
+                                    <% }else{ %>
+                                    <p>No referal code found.</p>
+                                    <% } %> </span>
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Donations Card -->
+                <div class="card donations-card">
+                    <div class="card-header">
+                        <h3>Total Donations</h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                        </svg>
+                        
+                    </div>
+                    <div class="card-content">
+                        <p class="label">Amount raised</p>
+                          <% if(intern){ %>
+                        <p > <%= intern.donations %></p>
+                        <% }else{ %>
+                         <p>No donations found.</p>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
+
+            
+        </div>
+    </main>
+<script >
+    document.addEventListener("DOMContentLoaded", async function() {
+    const username = localStorage.getItem("username");
+    const userLink = document.querySelector("#sign-link");
+    const signupBtn = document.getElementById("signup-button"); 
+    const profile = document.getElementById("profile"); 
+    const internName = document.getElementById("profile");
+  
+    if (username) {
+        if (signupBtn) {
+            signupBtn.textContent = username;
+            signupBtn.removeAttribute("href");
+            signupBtn.style.cursor = "default";
+               signupBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+            });
+        }
+        if (profile) profile.textContent = "Logout";
+    } else {
+        if (signupBtn) {
+            signupBtn.textContent = "Sign Up";
+            signupBtn.setAttribute("href", "/signup");
+        }
+        if (profile) profile.textContent = "Profile";
+    }
+    
+     setTimeout(() => {
+         if(!username){
+        alert("Please login/signup to access the leaderboard.");
+        window.location.href = "/signup";
+    }
+    },3000)
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlUsername = urlParams.get("username");
+
+    if (!urlUsername && username) {
+       
+        window.location.href = `/?username=${username}`;
+    }
+})
+ function logout() {
+                localStorage.clear();
+                window.location.href = "/";
+            }
+</script>    
+</body>
